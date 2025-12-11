@@ -1,0 +1,9 @@
+build/
+bin/
+lib/
+
+lc3
+
+.vscode/
+
+*.o
