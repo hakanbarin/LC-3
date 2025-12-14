@@ -1,0 +1,19 @@
+-Terminal komutlarını restore etmek için kullanılan global_terminal_manager değişkeni kalktı bunun yerine
+ restore fonksiyonu static hale getirildi.
+
+-Header dosyaları içindeki tanımlamalar .cpp dosyalarına aktarıldı. Genel olarak kod organizasyonu toparlandı.
+
+-Hata kontrolü kısmı biraz daha güçlendirildi.
+
+-maybe_unused, enum Class'lar ve
+template <typename E> 
+ constexpr auto to_underlying(E e) noexcept {
+return static_cast<std::underlying_type_t<E>>(e);
+}
+
+ yapısı koda eklendi. Tip güvenliği artırıldı.
+
+
+-Ayrıca bu kodun https://www.jmeiners.com/lc3-vm/src/lc3-alt.cpp - https://www.youtube.com/watch?v=QIUVSD3yqqE
+ buradakine benzer bir alternatifi var fakat çok detaylı bakmadım. -baktığım kısımları da pek anlamadım :D-
+

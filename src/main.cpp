@@ -1,18 +1,20 @@
-#include "vm.h"
+//https://www.jmeiners.com/lc3-vm/
+
 #include "terminal.h"
+#include "vm.h"
 
+#include <iostream>
+#include <stdexcept>
 
-
-int main(int argc, const char* argv[])
-{
-    TerminalManager terminal_manager;
-
-    global_terminal_manager = &terminal_manager;
+int main(int argc, const char *argv[]) {
+  try {
     std::signal(SIGINT, handle_interrupt);
 
     VirtualMachine vm;
-    vm.run(argc, argv);
-
-
-    return 0;
+    TerminalManager terminal_manager;
+    return vm.run(argc, argv);
+  } catch (const std::exception &e) {
+    std::cerr << "Hata: " << e.what() << std::endl;
+    return 1;
+  }
 }
